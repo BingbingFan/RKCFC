@@ -1,3 +1,4 @@
+#' @export
 KCFC_init <- function(Ly, Lt, K, init.method){
   if(init.method == "kmeans"){
     fpcaObjY <- FPCA(Ly,Lt)

@@ -1,3 +1,4 @@
+#' @export
 silhouette_score <- function(data, class, id, y, time,  robust = FALSE, option = NULL ){
   # require(fdapace)
   # if(robust){

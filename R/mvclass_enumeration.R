@@ -1,3 +1,5 @@
+#' @export
+
 # CH ----
 CH_mv_dt <- function(dtlist, mod_kcfc, mod_rkcfc){
   J <- length(dtlist)

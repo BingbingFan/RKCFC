@@ -1,3 +1,4 @@
+#' @export
 MFPCAInputs <- function(id, y, timevar, data){
   names(data)[which(names(data) == id)] <- "id"
   uid <- unique(data$id)

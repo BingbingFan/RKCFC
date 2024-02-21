@@ -1,3 +1,4 @@
+#' @export
 univar_clust_update <- function(m,ClustIds,Ly,Lt,K,ref_hatyc,optns,robust,LOO){
   # m: index of curve (m-th curve )
   # ClustIds

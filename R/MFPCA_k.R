@@ -1,3 +1,4 @@
+#' @export
 MFPCA_k <- function(u, Ly, Lt,  clust_f, optns,robust ){
   xiEst <- multi_score <- NULL
 

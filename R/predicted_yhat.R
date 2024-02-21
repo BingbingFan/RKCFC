@@ -1,3 +1,4 @@
+#' @export
 predicted_yhat <- function(FPCA_k, ith_yy,  target_t, robust, optns ){
   # suppressMessages(require(KFPCA))
   J <- length(FPCA_k)

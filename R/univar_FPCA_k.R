@@ -1,3 +1,4 @@
+#' @export
 univar_FPCA_k <- function( Ly, Lt,K,  clust_f , robust, optns){
   ClustIds <- lapply(unique(clust_f), function(x) which(clust_f == x)  )
   ref_hatyc <- list()

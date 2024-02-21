@@ -1,3 +1,4 @@
+#' @export
 univar_predicted_yhat <- function(FPCA_k, ith_yy,  target_t, robust, optns ){
 
   ## i th yy : curve that I want to predict

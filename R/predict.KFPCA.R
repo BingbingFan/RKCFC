@@ -1,3 +1,4 @@
+#' @export
 predict.KFPCA <- function(object, newLt, newLy, nK, more = FALSE, ...){
 
   Lt <- object$Lt
