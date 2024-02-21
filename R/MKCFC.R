@@ -1,3 +1,4 @@
+#' @export
 MKCFC <- function(Ly = NULL, Lt = NULL, data = NULL, id = NULL, ys= NULL, timevar= NULL,
                   K ,robust, optns, init.method =  "kmeans",  maxIter = 20,
                   parallel = TRUE, nmcores = NULL, trace = 1 , conv.prop = 0,
@@ -6,11 +7,11 @@ MKCFC <- function(Ly = NULL, Lt = NULL, data = NULL, id = NULL, ys= NULL, timeva
     stop(' "nmcores" should be specified when "parallel = TRUE"!')
   }
 
-  suppressMessages(require(MASS))
-  suppressMessages(require(parallel))
-  suppressMessages(require(doParallel))
-  suppressMessages(require(fdapace))
-  suppressMessages(require(KFPCA))
+  # suppressMessages(require(MASS))
+  # suppressMessages(require(parallel))
+  # suppressMessages(require(doParallel))
+  # suppressMessages(require(fdapace))
+  # suppressMessages(require(KFPCA))
   if( !is.null(Ly) && !is.null(Lt) ){
     n <- check_input(Ly, Lt)
     J <- length(Ly)

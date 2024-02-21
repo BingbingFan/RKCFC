@@ -1,5 +1,5 @@
 predicted_yhat <- function(FPCA_k, ith_yy,  target_t, robust, optns ){
-  suppressMessages(require(KFPCA))
+  # suppressMessages(require(KFPCA))
   J <- length(FPCA_k)
   ## i th yy : curve that I want to predict
   if(robust){

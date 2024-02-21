@@ -27,9 +27,9 @@ CH_mv <- function(dtlist, class, id, y, time, option,interval, robust,  basis){
   CH_sparse <- function(data, class, id, y, time, basis, robust = TRUE,
                         option = NULL,
                         interval ){
-    require(KFPCA)
-    require(fdapace)
-    require(dplyr)
+    # require(KFPCA)
+    # require(fdapace)
+    # require(dplyr)
     data <- data[,c( id,class, time, y)]
     names(data) <- c( "id","g", "time", "y")
     K <- length(unique(data$g))
@@ -121,11 +121,11 @@ CH_mv <- function(dtlist, class, id, y, time, option,interval, robust,  basis){
 # sil ----
 sil_score_mv <- function(data, class, id, y, time,  robust = FALSE, option = NULL){
   silhouette_score <- function(data, class, id, y, time,  robust = FALSE, option = NULL ){
-    require(fdapace)
-    if(robust){
-      require(KFPCA)
-    }
-    require(dplyr)
+    # require(fdapace)
+    # if(robust){
+    #   require(KFPCA)
+    # }
+    # require(dplyr)
     data <- data[,c( id,class, time, y)]
     names(data) <- c( "id","g", "time", "y")
     K <- length(unique(data$g))
@@ -217,8 +217,8 @@ pIC_mv <- function(data,id,time,y, clust, robust = F, option ){
     }
     #  MFPCA fuctions ----
     RMFPCA <- function(Ly, Lt, robust, option){
-      library(fdapace)
-      library(KFPCA)
+      # library(fdapace)
+      # library(KFPCA)
       J <- length(Ly)
       n <- length(Ly[[1]])
       if(robust){

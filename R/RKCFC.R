@@ -1,13 +1,13 @@
-
+#' @export
 RKCFC <- function(Ly = NULL, Lt = NULL, data = NULL, id = NULL, ys= NULL, timevar= NULL,
                   K ,robust = FALSE, optns, init.method =  "kmeans",  maxIter = 20,
                   parallel = TRUE, nmcores = NULL, trace = 1 ,
                   conv.prop= 0.01, LOO = TRUE){
-  require(KFPCA)
-  require(MASS)
-  library(parallel)
-  library(doParallel)
-  require(fdapace)
+  # require(KFPCA)
+  # require(MASS)
+  # library(parallel)
+  # library(doParallel)
+  # require(fdapace)
   # main ----
   if(parallel && is.null(nmcores)){
     stop(' "nmcores" should be specified when "parallel = TRUE"!')

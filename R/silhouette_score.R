@@ -1,9 +1,9 @@
 silhouette_score <- function(data, class, id, y, time,  robust = FALSE, option = NULL ){
-  require(fdapace)
-  if(robust){
-    require(KFPCA)
-  }
-  require(dplyr)
+  # require(fdapace)
+  # if(robust){
+  #   require(KFPCA)
+  # }
+  # require(dplyr)
   data <- data[,c( id,class, time, y)]
   names(data) <- c( "id","g", "time", "y")
   K <- length(unique(data$g))

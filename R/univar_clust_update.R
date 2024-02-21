@@ -2,9 +2,9 @@ univar_clust_update <- function(m,ClustIds,Ly,Lt,K,ref_hatyc,optns,robust,LOO){
   # m: index of curve (m-th curve )
   # ClustIds
   # packages and functions for parallel ----
-  require(MASS)
-  require(fdapace)
-  require(KFPCA)
+  # require(MASS)
+  # require(fdapace)
+  # require(KFPCA)
   # start of cluster updating---
   ith_yy <- Ly[[m]]
   ith_tt <- Lt[[m]]

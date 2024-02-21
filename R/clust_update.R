@@ -2,9 +2,9 @@ clust_update <- function(m,ClustIds,Ly,Lt,K,ref_hatyc,optns,robust,LOO){
   # m: index of curve (m-th curve )
   # ClustIds m,ClustIds,Ly,Lt,K,ref_hatyc,optns,robust
   # packages and functions for parallel ----
-  suppressMessages(require(MASS))
-  suppressMessages(require(fdapace))
-  suppressMessages(require(KFPCA))
+  # suppressMessages(require(MASS))
+  # suppressMessages(require(fdapace))
+  # suppressMessages(require(KFPCA))
   # start of cluster updating----
   ith_yy <- ith_tt <- list()
   for(j in 1:length(Ly)){
