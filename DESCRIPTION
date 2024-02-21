@@ -8,7 +8,19 @@ Description: K-centers functional clustering modeling (KCFC), robust KCFC, multi
 Encoding: UTF-8
 License: GPL (>= 3)
 LazyData: true
-Imports: fdapace, KFPCA, MASS, parallel, doParallel, dplyr, mclust
+Imports: 
+    MASS,
+    parallel,
+    doParallel,
+    dplyr,
+    mclust
 RoxygenNote: 7.1.2
 Depends: 
+    MASS, 
+    parallel, 
+    doParallel, 
+    dplyr, 
+    mclust,
+    fdapace,
+    KFPCA,
     R (>= 2.10)
