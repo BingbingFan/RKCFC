@@ -18,7 +18,7 @@ MKCFC <- function(Ly = NULL, Lt = NULL, data = NULL, id = NULL, ys= NULL, timeva
     uid <- NULL
   }
   if(!is.null(data) && !is.null(ys) && !is.null(timevar) && !is.null(id) ){
-    dt <- MFPCAInputs(id, ys,timevar ,data )
+    dt <- fdapace::MFPCAInputs(id, ys,timevar ,data )
     Ly <-  dt$Ly
     Lt <-  dt$Lt
     uid <- unlist(dt$id)
@@ -79,11 +79,11 @@ MKCFC <- function(Ly = NULL, Lt = NULL, data = NULL, id = NULL, ys= NULL, timeva
         }
         # clust
         if(parallel){
-          cl <- makeCluster(nmcores)
-          registerDoParallel(cl)
-          clust_it <- foreach(x=1:n) %dopar%
+          cl <- parallel::makeCluster(nmcores)
+          doParallel::registerDoParallel(cl)
+          clust_it <- foreach::foreach(x=1:n) %dopar%
             clust_update(m = x, ClustIds, Ly, Lt, K, ref_hatyc, optns,robust,LOO)
-          stopCluster(cl)
+          parallel::stopCluster(cl)
         }else{
           clust_it <- lapply(1:n, function(x) clust_update(m = x, ClustIds, Ly, Lt, K, ref_hatyc, optns,robust,LOO))
         }

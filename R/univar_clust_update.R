@@ -24,7 +24,7 @@ univar_clust_update <- function(m,ClustIds,Ly,Lt,K,ref_hatyc,optns,robust,LOO){
                              nK = optns$nK, bw = optns$bw, bwK = optns$bwK,
                              nRegGrid = optns$nRegGrid, fdParobj = optns$basis)
         }else{
-          temp_fpca <- FPCA(yy, tt, optns =  optns )
+          temp_fpca <- fdapace::FPCA(yy, tt, optns =  optns )
 
         }
         yhatc_pred <- univar_predicted_yhat(temp_fpca, ith_yy,  ith_tt, robust, optns)

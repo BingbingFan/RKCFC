@@ -13,7 +13,7 @@ univar_FPCA_k <- function( Ly, Lt,K,  clust_f , robust, optns){
                               nK = optns$nK, bw = optns$bw, bwK = optns$bwK,
                               nRegGrid = optns$nRegGrid, fdParobj = optns$basis)
     }else{
-      ref_hatyc[[u]] <- FPCA(yy, tt, optns =  optns )
+      ref_hatyc[[u]] <- fdapace::FPCA(yy, tt, optns =  optns )
     }
 
   }

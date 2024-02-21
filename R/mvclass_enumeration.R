@@ -232,7 +232,7 @@ pIC_mv <- function(data,id,time,y, clust, robust = F, option ){
         mu <- lapply(1:J, function(x) uFPCA[[x]]$mean)
         workgrid <- lapply(1:J, function(x) uFPCA[[x]]$RegGrid)
       }else{
-        uFPCA <- lapply(1:J, function(x) FPCA(Ly = Ly[[x]], Lt = Lt[[x]], optns = option))
+        uFPCA <- lapply(1:J, function(x) fdapace::FPCA(Ly = Ly[[x]], Lt = Lt[[x]], optns = option))
         FPC_score <- lapply(1:J, function(x) uFPCA[[x]]$xiEst)
         FPC <- lapply(1:J, function(x) uFPCA[[x]]$phi)
         mu <- lapply(1:J, function(x) uFPCA[[x]]$mu)
