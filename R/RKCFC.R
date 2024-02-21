@@ -20,7 +20,7 @@ RKCFC <- function(Ly = NULL, Lt = NULL, data = NULL, id = NULL, ys= NULL, timeva
   if(!is.null(data) && !is.null(ys) && !is.null(timevar) && !is.null(id)){
     data <- data[,c(id, timevar, ys)]
     names(data) <- c("id","time","y")
-    dt <- MakeFPCAInputs(IDs = data$id, tVec = data$time, yVec = data$y)
+    dt <- fdapace::MakeFPCAInputs(IDs = data$id, tVec = data$time, yVec = data$y)
     Ly <- dt$Ly
     Lt <- dt$Lt
     uid <- unlist(dt$Lid)
