@@ -1,0 +1,13 @@
+Package: RKCFC
+Type: Package
+Title: Robust K-centers functional clustering modeling for saprsely observed longitudinal data
+Version: 0.1.0
+Author: Bingbing Fan
+Maintainer: <bingbingfan24@hotmail.com>
+Description: K-centers functional clustering modeling (KCFC), robust KCFC, multivaiate KCFC, and multivaiate robust MKCFC modeling for saprsely observed longitudinal data.
+Encoding: UTF-8
+License: GPL-2
+LazyData: true
+RoxygenNote: 7.1.2
+Depends: 
+    R (>= 2.10)
