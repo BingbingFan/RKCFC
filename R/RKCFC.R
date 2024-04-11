@@ -76,7 +76,7 @@ RKCFC <- function(Ly = NULL, Lt = NULL, data = NULL, id = NULL, ys= NULL, timeva
           cl <- parallel::makeCluster(nmcores)
           doParallel::registerDoParallel(cl)
           clust_it <- foreach::foreach(x=1:n) %dopar%
-            univar_clust_update(m = x, ClustIds, Ly, Lt, K, ref_hatyc, optns,robust)
+            univar_clust_update(m = x, ClustIds, Ly, Lt, K, ref_hatyc, optns,robust,LOO)
           parallel::stopCluster(cl)
         }else{
           clust_it <- lapply(1:n, function(x) univar_clust_update(m = x, ClustIds, Ly, Lt, K, ref_hatyc, optns,robust,LOO))
