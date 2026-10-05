@@ -1,0 +1,54 @@
+#' @title Mayo Clinic primary biliary cirrhosis follow-up data
+#'
+#' @description
+#' Longitudinal follow-up of 312 patients from the Mayo Clinic randomised trial
+#' of D-penicillamine in primary biliary cirrhosis, in long format with one row
+#' per clinic visit.
+#'
+#' @details
+#' Included as a worked example because it has the features the method is
+#' designed for. Visits are irregularly timed and sparse, with a median of about
+#' six per patient and a wide spread; and the biochemical markers, serum
+#' bilirubin in particular, are strongly right-skewed with occasional values
+#' orders of magnitude above the median. That is the setting in which a
+#' covariance operator estimated by sample second moments is unreliable and
+#' Kendall's tau is not.
+#'
+#' Use \code{serBilir} against \code{year} for a univariate illustration. Note
+#' that \code{serChol} has substantial missingness and needs explicit handling.
+#'
+#' @format A data frame with 1945 rows and 20 columns:
+#' \describe{
+#'   \item{id}{patient identifier, a factor with 312 levels}
+#'   \item{years}{follow-up time to death or censoring, in years}
+#'   \item{status}{vital status: \code{alive}, \code{transplanted}, \code{dead}}
+#'   \item{status2}{1 if the patient died, 0 otherwise}
+#'   \item{drug}{randomised treatment: \code{placebo} or \code{D-penicil}}
+#'   \item{age}{age at baseline, in years}
+#'   \item{sex}{\code{male} or \code{female}}
+#'   \item{year}{time of the visit, in years from baseline}
+#'   \item{ascites}{presence of ascites at the visit}
+#'   \item{hepatomegaly}{presence of hepatomegaly at the visit}
+#'   \item{spiders}{presence of spider naevi at the visit}
+#'   \item{edema}{oedema status at the visit}
+#'   \item{serBilir}{serum bilirubin, mg/dl}
+#'   \item{serChol}{serum cholesterol, mg/dl; frequently missing}
+#'   \item{albumin}{serum albumin, g/dl}
+#'   \item{alkaline}{alkaline phosphatase, U/l}
+#'   \item{SGOT}{aspartate aminotransferase, U/ml}
+#'   \item{platelets}{platelet count}
+#'   \item{prothrombin}{prothrombin time, seconds}
+#'   \item{histologic}{histologic stage of disease, 1 to 4}
+#' }
+#'
+#' @source
+#' Fleming, T. R. and Harrington, D. P. (1991). \emph{Counting Processes and
+#' Survival Analysis}. Wiley, New York.
+#'
+#' @examples
+#' data(pbc2)
+#' # sparse and irregular
+#' summary(as.vector(table(pbc2$id[!is.na(pbc2$serBilir)])))
+#' # and strongly right-skewed
+#' quantile(pbc2$serBilir, c(0.5, 0.9, 0.99, 1), na.rm = TRUE)
+"pbc2"

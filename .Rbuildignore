@@ -1,0 +1,9 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^docs$
+^tests/local$
+^\.github$
+^README\.md$
+^LICENSE\.md$
+^\.gitattributes$
+^\.gitignore$

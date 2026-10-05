@@ -1,0 +1,49 @@
+Package: RKCFC
+Type: Package
+Title: Robust K-Centers Functional Clustering for Sparsely Observed Longitudinal Data
+Version: 0.2.0
+Authors@R: c(
+    person(given = "Bingbing", family = "Fan", role = c("aut", "cre"),
+           email = "bingbingfan24@hotmail.com"),
+    person(given = "Tao", family = "Zhang", role = "aut",
+           email = "taozhang@tmu.edu.cn"),
+    person(given = "Rou", family = "Zhong", role = "ctb",
+           comment = "KFPCA-derived implementation"),
+    person(given = "Jingxiao", family = "Zhang", role = "ctb",
+           comment = "KFPCA-derived implementation")
+    )
+Description: K-centers functional clustering (KCFC) and robust K-centers
+    functional clustering (RKCFC) for sparsely and irregularly observed
+    univariate longitudinal data that may be non-Gaussian. RKCFC replaces the
+    conventional functional principal component analysis inside the K-centers
+    iteration with Kendall's tau functional principal component analysis, whose
+    eigenspace agrees with that of the covariance operator without a moment
+    assumption on the principal component scores. The package also carries the
+    metrics and data-generating functions used by the accompanying manuscript;
+    the study scripts that call them are distributed separately
+    <https://github.com/BingbingFan/RKCFC_Simulation>.
+    Includes an internal KFPCA-derived implementation based on KFPCA version 2.0
+    by Rou Zhong and Jingxiao Zhang <https://github.com/BingbingFan/KFPCA>,
+    incorporated under GPL (>= 3). RKCFC-specific adaptations are by Bingbing Fan
+    and are identified in the source.
+URL: https://github.com/BingbingFan/RKCFC
+BugReports: https://github.com/BingbingFan/RKCFC/issues
+Encoding: UTF-8
+LazyData: true
+License: GPL (>= 3)
+Imports:
+    MASS,
+    fda,
+    fdapace,
+    kader,
+    mclust,
+    parallel,
+    pracma,
+    stats,
+    utils
+RoxygenNote: 7.3.3
+Depends:
+    R (>= 3.5.0)
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
