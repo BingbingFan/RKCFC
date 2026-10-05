@@ -59,15 +59,18 @@
 #' @examples
 #' \donttest{
 #' set.seed(1)
-#' n <- 60
+#' n <- 100
 #' g <- rep(1:2, length.out = n)
 #' grid <- seq(0, 1, length.out = 101)
 #' Lt <- lapply(seq_len(n), function(i) sort(sample(grid, max(2, stats::rpois(1, 7)))))
 #' Ly <- lapply(seq_len(n), function(i)
 #'   2 * sin(4 * Lt[[i]]) + 5 * (g[i] == 2) + stats::rnorm(length(Lt[[i]]), 0, 0.5))
 #'
+#' # Fixed bandwidths: on sparse data the automatic choice can be too small
+#' # for the class-specific fits.
 #' optns <- list(dataType = "Sparse", methodMuCovEst = "smooth", nRegGrid = 21,
-#'               methodSelectK = 2, useBinnedData = "OFF")
+#'               methodSelectK = 2, useBinnedData = "OFF",
+#'               userBwMu = 0.1, userBwCov = 0.2)
 #' out <- RKCFC_restarts(Ly = Ly, Lt = Lt, K = 2, robust = FALSE, optns = optns,
 #'                       nstart = 5, seed = 42, parallel = FALSE, trace = 0,
 #'                       LOO = FALSE)

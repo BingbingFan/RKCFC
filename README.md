@@ -39,7 +39,7 @@ optns <- list(
   interval = interval,
   nK       = 2,                       # components retained
   bw       = 0.1 * diff(interval),    # subject-level smoothing; no GCV path, must be numeric
-  bwK      = "GCV",                   # Kendall surface bandwidth
+  bwK      = 0.2 * diff(interval),    # Kendall surface bandwidth, fixed: GCV can be too small for sparse classes
   nRegGrid = 51,
   basis    = fda::create.bspline.basis(
     interval, nbasis = 13, norder = 4,

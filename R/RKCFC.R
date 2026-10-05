@@ -125,7 +125,10 @@
 #'
 #' interval <- range(pbc$year)
 #' optns <- list(
-#'   interval = interval, nK = 2, bw = 0.1 * diff(interval), bwK = "GCV",
+#'   interval = interval, nK = 2, bw = 0.1 * diff(interval),
+#'   # a fixed Kendall-surface bandwidth: GCV can choose one too small for the
+#'   # class-specific fits on sparse data
+#'   bwK = 0.2 * diff(interval),
 #'   nRegGrid = 51,
 #'   basis = fda::create.bspline.basis(interval, nbasis = 13, norder = 4,
 #'             breaks = seq(interval[1], interval[2], length.out = 11))
